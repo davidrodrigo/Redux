@@ -1,17 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
 //NGRX
 import { StoreModule } from '@ngrx/store';
-import { todoReducer } from './todos/todo.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { appReducers } from './app.reducer';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodosModule } from './todos/todos.module';
 import { FooterComponent } from './footer/footer.component';
 import { environment } from 'src/environments/environment';
-import { todoReducerFilter } from './todos/filter/footer-filter.reducer';
-
 
 @NgModule({
   declarations: [
@@ -22,7 +21,7 @@ import { todoReducerFilter } from './todos/filter/footer-filter.reducer';
     BrowserModule,
     AppRoutingModule,
     TodosModule,
-    StoreModule.forRoot({ todos: todoReducer , todosFilter: todoReducerFilter} ),
+    StoreModule.forRoot( appReducers ),
     // Instrumentation must be imported after importing StoreModule (config is optional)
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states

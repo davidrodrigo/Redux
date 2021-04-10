@@ -40,7 +40,6 @@ export class TodoItemComponent implements OnInit {
   }
 
   editTodoCheck(){
-    console.log(this.checkDone.value)
     this.store.dispatch(actions.toggle({ id: this.todoItem.id }));
   }
 

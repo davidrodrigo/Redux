@@ -1,9 +1,9 @@
-import { createAction } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
+import { Todo } from '../models/todo-model';
 
-export const allFilter = createAction(
-    '[TODO] All filter'
-);
+export type validFilters = 'all' | 'done' | 'pending';
 
-export const doneFilter = createAction(
-    '[TODO] Done filter'
+export const setFilter = createAction(
+    '[Filter] Set filter',
+    props<{ filter : validFilters }>()
 );

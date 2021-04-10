@@ -6,12 +6,14 @@ import { TodoItemComponent } from './todo-item/todo-item.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoPageComponent } from './todo-page/todo-page.component';
 import { ReactiveFormsModule } from "@angular/forms";
+import { FooterFilterComponent } from './filter/footer-filter.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 
 
 @NgModule({
-  declarations: [TodoAddComponent, TodoFooterComponent, TodoItemComponent, TodoListComponent, TodoPageComponent],
+  declarations: [TodoAddComponent, TodoFooterComponent, TodoItemComponent, TodoListComponent, TodoPageComponent, FooterFilterComponent, FilterPipe],
   imports: [
     CommonModule,
     ReactiveFormsModule
